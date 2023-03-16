@@ -5,7 +5,9 @@ function cfg = ct_site_param_processing
 %--------------------------------------------------------------
 
 % Directory with files to be processed
-cfg.myDirPath = '/Volumes/GoogleDrive/My Drive/Research/DOVuFRIS/Fris_Apres/Fris_data/data2test_processing/ex01'; 
+
+cfg.myDirPath = '/path_to_data_folder'; 
+%cfg.myDirPath = '/Volumes/GoogleDrive/My Drive/Research/DOVuFRIS/Fris_Apres/Fris_data/data2test_processing/ex01'; 
 
 cfg.myDir = [cfg.myDirPath '/**/'];
 
@@ -13,20 +15,10 @@ cfg.output_mat_file_name = 'ex01';
 cfg.output_mat_fname_tseries_fine = [cfg.output_mat_file_name '_ts_fine'];
 cfg.output_mat_fname_tseries_coarse = [cfg.output_mat_file_name '_ts_coarse'];
 
-% % Bad burst option (if not define defaults are assigned)
-% % MANUAL SELECT
-% cfg.bad_burst.filename = [];
-% cfg.bad_burst.burst_in_file = [];
-% cfg.bad_burst.chirpselect = [];
-% % APPROACH
-% cfg.chirp_quality_test.type = 'none';
-% cfg.chirp_quality_test.range = [];
-% cfg.chirp_quality_test.tol_num_over = [];
-% 
-% % Subset of bursts limited by first and last file to consider
-% cfg.burst_subset_end_files = 0;
-% cfg.burst_subset_first_file = [];
-% cfg.burst_subset_last_file = [];
+% If want only a subset of files in the directory, uncomment the following and provide the first and last files here:
+%cfg.burst_subset_end_files = 1;
+%cfg.burst_subset_first_file = 'DATA2016-01-16-1428.DAT';
+%cfg.burst_subset_last_file = 'DATA2016-01-17-2328.DAT';
 
 % Subset of bursts to choose (set options to 0 to process all bursts)
 cfg.first_burst_infile_only = 0; %Set to 1 if want only first burst in each file
